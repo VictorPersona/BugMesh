@@ -1,5 +1,5 @@
 {
-  "name": "distributed-bug-tracker",
+  "name": "BugMesh",
   "private": true,
   "scripts": {
     "build": "turbo run build",

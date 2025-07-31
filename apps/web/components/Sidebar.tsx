@@ -12,6 +12,7 @@ export default function Sidebar() {
     { name: 'Projects', href: '/projects' },
     { name: 'Logs', href: '/dashboard/logs' },
     { name: 'Metrics', href: '/dashboard/metrics' },
+    { name: 'Services', href: '/dashboard/services' },
   ]
   return (
     <aside className="bg-gray-100 dark:bg-gray-800 hidden md:block w-64 p-6">
@@ -21,7 +22,7 @@ export default function Sidebar() {
             href={link.href}
             key={link.href}
             className={cn(
-              'block py-2 px-4 rounded transition hover:bg-gray-200 dark:hover:-bg-gray-700',
+              'block py-2 px-4 rounded transition dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700',
               pathname === link.href
                 ? 'bg-gray-300 dark:bg-gray-700 font-bold'
                 : ' '
