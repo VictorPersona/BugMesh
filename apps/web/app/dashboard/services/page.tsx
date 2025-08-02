@@ -1,3 +1,12 @@
+/*
+ * Filename: /home/gaurav/Projects/BugMesh/apps/web/app/dashboard/services/page.tsx
+ * Path: /home/gaurav/Projects/BugMesh/apps/web
+ * Created Date: Thursday, July 31st 2025, 6:30:12 pm
+ * Author: Gaurav Tupe
+ * 
+ * Copyright (c) 2025 Your Company
+ */
+
 const services = [
   { name: 'auth-service', status: 'healthy' },
   { name: 'api-gateway', status: 'degraded' },

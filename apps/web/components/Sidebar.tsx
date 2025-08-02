@@ -1,3 +1,13 @@
+/*
+ * Filename: /home/gaurav/Projects/BugMesh/apps/web/components/Sidebar.tsx
+ * Path: /home/gaurav/Projects/BugMesh/apps/web
+ * Created Date: Monday, July 21st 2025, 11:55:40 am
+ * Author: Gaurav Tupe
+ * 
+ * Copyright (c) 2025 Your Company
+ */
+
+
 'use client'
 
 import Link from 'next/link'

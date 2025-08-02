@@ -1,3 +1,13 @@
+/*
+ * Filename: /home/gaurav/Projects/BugMesh/apps/web/app/dashboard/logs/page.tsx
+ * Path: /home/gaurav/Projects/BugMesh/apps/web
+ * Created Date: Monday, July 21st 2025, 12:36:32 pm
+ * Author: Gaurav Tupe
+ * 
+ * Copyright (c) 2025 Your Company
+ */
+
+
 export default function LogsPage() {
   return (
     <div>
