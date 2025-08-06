@@ -1,44 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type IssueStatus = "open" | "in-progress" | "closed";
-
-const mockIssues = [
-  { id: "1", title: "Fix auth bug", status: "open", project: "User Service" },
-  {
-    id: "2",
-    title: "Rate limit login",
-    status: "in-progress",
-    project: "User Service",
-  },
-  {
-    id: "3",
-    title: "Gateway 502 errors",
-    status: "open",
-    project: "API Gateway",
-  },
-  {
-    id: "4",
-    title: "Workflow stuck recovery",
-    status: "closed",
-    project: "Temporal Worker",
-  },
-  {
-    id: "5",
-    title: "Add pagination",
-    status: "in-progress",
-    project: "API Gateway",
-  },
-];
-
+interface Issue {
+  id: string;
+  title: string;
+  status: IssueStatus;
+  project: string;
+}
 export default function IssuesPage() {
+  const [Issues, setIssues] = useState<Issue[]>([]);
   const [filter, setFilter] = useState<IssueStatus | "all">("all");
+
+  useEffect(() => {
+    async function fetchIssues() {
+      try {
+        const res = await fetch("/api/issues");
+        if (!res.ok) throw new Error("Failed to fetch issues");
+        const data: Issue[] = await res.json();
+        setIssues(data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchIssues();
+  }, []);
 
   const filteredIssues =
     filter === "all"
-      ? mockIssues
-      : mockIssues.filter((issue) => issue.status === filter);
+      ? Issues
+      : Issues.filter((issue) => issue.status === filter);
 
   const statuses: (IssueStatus | "all")[] = [
     "all",
